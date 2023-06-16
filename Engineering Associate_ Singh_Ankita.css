@@ -1,0 +1,79 @@
+body{
+    font-size: 12px !important;
+    padding: 20px;
+}
+
+/* GENERAL DETAILS CLASSES */
+.general-details{
+    background-color: skyblue;
+    padding: 5px;
+    margin: 20px 0px 10px 0px;
+}
+
+.gen-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.project{
+    flex-basis: 50%;
+    margin-bottom: 15px;
+}
+
+.proj-charge-code{
+    flex-basis: 50%;
+}
+
+.region{
+    flex-basis: 50%;
+}
+
+/* PROJECT DETAILS CLASSES */
+.project-details{
+    background-color: skyblue;
+    padding: 5px;
+    margin: 20px 0px 10px 0px;
+}
+
+.project-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.request{
+    flex-basis: 50%;
+}
+
+.target-date{
+    flex-basis: 50%;
+}
+
+
+  
+  .extra-info {
+    display: none;
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  
+  .info:hover .extra-info {
+    display: block;
+  }
+  
+  .info {
+    display: flex;
+    margin: 5px;
+    padding-left: 5px;
+
+  }
+  
+  .info:hover {
+    padding: 0 0 0 5px;
+    text-align: left !important;
+  }

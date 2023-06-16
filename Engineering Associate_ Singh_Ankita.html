@@ -1,0 +1,167 @@
+<!-- it's an instruction to tell web browser which version it is -->
+<!DOCTYPE html>  
+<html lang="en">
+<!-- exterrnal style sheet  -->
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/ankitasingh/Downloads/Anki Test/Engineering Associate_ Singh_Ankita.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <title>Project Submission Form</title>
+</head>
+<body>
+    <div>
+        <b>Project Submission Form</b> <br><br>
+        Please fill this form to submit your project request. Our team will evaluate all submissions and allocate resources to all approved projects
+    </div>
+    <form onsubmit="submitForm()">
+        <div class="general-details">
+            General Information
+        </div>
+
+        <div class="gen-info">
+            <div class="project">
+                <label for="project-name">Project Name *</label>
+
+                <div style="display: flex; height: 30px;">
+                    <input type="text" id="project-name" name="project-name" maxlength="50" required>
+                    <div class="info">
+                        <i class="icon-info-sign"></i>
+                  
+                        <span class="extra-info">
+                          Max character length 50
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="proj-charge-code">
+                <label for="project-charge-code">Project Charge code *</label><br>
+                
+                <div style="display: flex; height: 30px;">
+                    <input type="text" id="project-charge-code" name="project-charge-code" pattern="[EIM].{0,9}" required>
+                
+                    <div class="info">
+                        <i class="icon-info-sign"></i>
+                  
+                        <span class="extra-info">
+                          Max length 10, first letter should be E, I or M
+                        </span>
+                    </div>
+                </div>
+                
+                   
+            </div>
+
+            <div class="region">
+                <label for="region">Region *</label><br>
+                <div style="display: flex;">
+                    <select id="region" name="region" style="width: 181px;" required multiple>
+                        <option value="eastern">Eastern</option>
+                        <option value="western">Western</option>
+                        <option value="central">Central</option>
+                    </select>
+
+                    <div class="info">
+                        <i class="icon-info-sign"></i>
+                  
+                        <span class="extra-info">
+                          <b>Area</b> dropdown list, Hold Ctrl to select multiple options
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="project-details">
+            Project Details
+        </div>
+
+        <div class="project-info">
+            <div class="request">
+                <label for="request-type">Request Type *</label>
+                <div style="display: flex;">
+                    <select id="request-type" name="request-type" style="width: 181px; height: 30px;" required>
+                        <option value="new">New</option>
+                        <option value="enhancement">Enhancement</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <div class="info">
+                        <i class="icon-info-sign"></i>
+                  
+                        <span class="extra-info">
+                          Select your type of request
+                        </span>
+                    </div>
+                </div>
+
+                <div id="other-defined-container" style="display: none; margin-top: 5px; height: 30px;">
+                
+                    <label for="other-defined">Define Other</label>
+                    <div>
+                        <input id="other-defined" required>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="target-date">
+                <label for="target-deadline">Target Deadline *</label>
+                <div style="display: flex;">
+                    <input type="date" id="target-deadline" name="target-deadline" min="" style="width: 181px; height: 30px;" required > 
+                    
+                    <div class="info">
+                        <i class="icon-info-sign"></i>
+                  
+                        <span class="extra-info">
+                            Submission date cannot be less than today's date
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <br>
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+<script>
+    
+    function submitForm(){
+        //const regionInput = document.getElementById("region");
+        //const regionData = regionInput.value
+       // how the multi select values are done
+        window.alert("Thank you for submitting a project with our team! We will reach out to discuss the project in more detail")
+        
+        // Array.from(regionInput.options).filter(region => region.selected).map(region => region.value).toString()
+    }    
+
+    const today = new Date().toISOString().split("T")[0];
+    document.querySelector("#target-deadline").setAttribute("min", today);
+
+    var otherInput = document.getElementById("other-defined")
+
+    document.getElementById('request-type').addEventListener('change', function() {
+      var otherDefinedContainer = document.getElementById('other-defined-container');
+      if (this.value === 'other') {
+        otherDefinedContainer.style.display = 'block';
+        otherInput.required = true
+
+      } else {
+        otherDefinedContainer.style.display = 'none';
+      }
+    });
+
+</script>
+
+
+</body>
+</html>
